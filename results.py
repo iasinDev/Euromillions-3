@@ -1,7 +1,9 @@
 import csv
 from pprint import pprint
 
-#DrawDate,Ball 1,Ball 2,Ball 3,Ball 4,Ball 5,Lucky Star 1,Lucky Star 2,UK Millionaire Maker,DrawNumber
+
+#https://www.national-lottery.co.uk/results/euromillions/draw-history/csv
+
 results = {}
 with open("results.csv","r") as f:
     reader = csv.reader(f)
@@ -15,6 +17,4 @@ with open("results.csv","r") as f:
             millionaireMaker = data[i][8]
             drawNumber = data[i][9]
             results[drawDate] = {"Balls": balls,"Lucky Stars": luckyStars,"Millionaire Maker": millionaireMaker, "Draw Number": drawNumber}
-
-
 pprint(results)
