@@ -4,8 +4,8 @@ import urllib2
 import datetime
 
 def getResults():
+    results = []
     r= urllib2.urlopen("https://www.national-lottery.co.uk/results/euromillions/draw-history/csv")
-    results = {}
     reader = csv.reader(r)
     data = list(reader)
     row_count = len(data)
@@ -16,7 +16,6 @@ def getResults():
             luckyStars = [data[i][6],data[i][7]]
             millionaireMaker = data[i][8]
             drawNumber = data[i][9]
-            results[drawDate] = {"Balls": balls,"Lucky Stars": luckyStars,"Millionaire Maker": millionaireMaker, "Draw Number": drawNumber}
+            result = {"DrawDate": drawDate, "Balls": balls,"LuckyStars": luckyStars,"MillionaireMaker": millionaireMaker, "DrawNumber": drawNumber}
+            results.append(result)
     return results
-
-pprint(getResults())
