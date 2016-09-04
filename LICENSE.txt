@@ -1,0 +1,6 @@
+Euromillions results by Kieran Wynne is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
+Title = Euromillions results
+Author = Kieran Wynne
+Contact = keewynne90+github@gmail.com
+source = https://github.com/k33k00/Euromillions-results
