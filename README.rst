@@ -7,7 +7,8 @@ EuroMillions results
 Installation
 ------------
 .. code-block:: bash
-    $ pip install pykemon
+
+   $ pip install euromillions
 
 
 Usage
