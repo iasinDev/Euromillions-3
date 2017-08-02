@@ -1,7 +1,8 @@
 env:
   global:
     CC_TEST_REPORTER_ID:
-      secure: p/BLA/om6PjTEDc440MOiE4mhwv3aNG7WJVhoUtSqz2ZBH+Y1fMWnk3kouDHXxiIOhFJVfWAL1AGwDm0cj/aYE8hK10Q7jQG4XhJS/AQloUEerpLPvKDh2IfjEnuY23/3psyrQm2RE7Q0WxmtkUGE1/QcG7Wa46cOP+z+IjhxlAvs0D/xgIPBJ6l5WkgKft1c7A4wxO2UeY30kIRO2rf3PIvVoc+k2c59dHLDzFsgwo1gVNsxeoWBLQdt5g+UtBDi0HRkLQKEuARVst05UksIAKp8x/14iOIuYliRpqVPUT5BK5qeIsi2WaKPxYhJ4MRNmohGUbdjdvm18GYGxjYxONBh+UJ94cG7dhwfgnZ4X8hhVZ0qVbY9Q+bP3FwTg4/XZ38ZoArZoEnwk0daed8gurWo5XZD0lPXmU11Rxz/Aj4GHA+bJxZUstqRnIOumtkOu4/lhxS9rH7unlyO5Z1foBySmnMgOdoqXUwUD1kVKZTuY54Y6DbNGDr2OTAcU3CT7hXj8VjvsZ9eWM/7wuXnWYPeIFfMzboaV1wuqK8mHghsAmJuImAq64WNdwz8fAPX1BLEaL5takFaTqtsvvaFYxeLsAd4/LTpNuUcY726ukMaqjMU5G7RlKjUkwuGn7LQ01LAmBQDvxWMjaDc9MUVsbj/Tpx106cR1RKzd94W5I=
+      secure: LV3b6DXxc0MIMll/AmD7I32tIkyGpYyMYhnsjrSV5NnmlsuanJRED1jJ1iXEL1wvAJsxoGyxyra2rmIY4luIZzLPLfpFkNtxhG0fgcmNTXAMJeuT6Supqtb5Dm+lOzozSPofWmqvL1KCDMWztmRB2ZDQA7ESaQ9ypNMmj7edgkfCphC3VcxczbE47/iHBwPr7uQSVSBsMDpkGPselW9ghfowEj4OFFC/c4O5QP8DvLhKKYutpJHoqFpdRncgP7glRA/6QZJpN0B2UtFNG0XgN0uYU8lG6DMZhjDHzAWVPHh0+EN5TaGgxxqO6tnyvSpeT20kmDchUQZbw9t8L4KLhlNAZLUwv4BTpMLWa2/Ai9fP3cg1BFd4tLJTo8j/q1ANY/4gaI/HEfGS4PQsG1nb3C5icCRgx4PoMQlM5vSD3eSP15W/g830hb9aCcoXshPEcwpZ0/PC4uvMyC9uwVFWbswl9rtTDN/URa36JfJjycZeDbzCfgMH0uXn7HLR2FFKAHMKo7BOHkDinlGHDW53IqKJB0AJsq5GilN8FJPLfBfrWq03iDGxPJKNx4de6EZOdg7A+QfpUBnJnSqb82ZjaYohLHAlAN+OyZzxJkoYtu6Y//ifhHnAX532i28m2EUgyyIvEMxdZIPbWgyZOLY/qkYFzG+cL+LLL7zAAPkjjsU=
+
 
 language: python
 python:
@@ -20,7 +21,8 @@ install:
 - pip install .
 - pip install coverage codacy-coverage
 before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
 script:
 - coverage run -m unittest
