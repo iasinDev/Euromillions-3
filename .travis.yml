@@ -13,7 +13,9 @@ python:
 - nightly
 install:
 - pip install .
-script: python -m unittest
+- pip install coverage
+
+script: coverage run -m unittest
 deploy:
   provider: pypi
   user: k33k00
