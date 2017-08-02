@@ -1,8 +1,9 @@
 ================
 EuroMillions results
 ================
-.. image:: https://badge.fury.io/py/euromillions.svg
-    :target: https://badge.fury.io/py/euromillions
+
+.. image:: https://badge.fury.io/py/EuroMillions.svg
+    :target: https://badge.fury.io/py/EuroMillions
 
 Installation
 ------------
