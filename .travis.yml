@@ -1,13 +1,5 @@
-env:
-  global:
-    CC_TEST_REPORTER_ID:
-      secure: LV3b6DXxc0MIMll/AmD7I32tIkyGpYyMYhnsjrSV5NnmlsuanJRED1jJ1iXEL1wvAJsxoGyxyra2rmIY4luIZzLPLfpFkNtxhG0fgcmNTXAMJeuT6Supqtb5Dm+lOzozSPofWmqvL1KCDMWztmRB2ZDQA7ESaQ9ypNMmj7edgkfCphC3VcxczbE47/iHBwPr7uQSVSBsMDpkGPselW9ghfowEj4OFFC/c4O5QP8DvLhKKYutpJHoqFpdRncgP7glRA/6QZJpN0B2UtFNG0XgN0uYU8lG6DMZhjDHzAWVPHh0+EN5TaGgxxqO6tnyvSpeT20kmDchUQZbw9t8L4KLhlNAZLUwv4BTpMLWa2/Ai9fP3cg1BFd4tLJTo8j/q1ANY/4gaI/HEfGS4PQsG1nb3C5icCRgx4PoMQlM5vSD3eSP15W/g830hb9aCcoXshPEcwpZ0/PC4uvMyC9uwVFWbswl9rtTDN/URa36JfJjycZeDbzCfgMH0uXn7HLR2FFKAHMKo7BOHkDinlGHDW53IqKJB0AJsq5GilN8FJPLfBfrWq03iDGxPJKNx4de6EZOdg7A+QfpUBnJnSqb82ZjaYohLHAlAN+OyZzxJkoYtu6Y//ifhHnAX532i28m2EUgyyIvEMxdZIPbWgyZOLY/qkYFzG+cL+LLL7zAAPkjjsU=
-
-
 language: python
 python:
-- '2.6'
-- '2.7'
 - '3.2'
 - '3.3'
 - '3.4'
@@ -20,16 +12,11 @@ python:
 install:
 - pip install .
 - pip install coverage codacy-coverage
-before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
-  > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
 script:
 - coverage run -m unittest
+- python -m unittest
 - coverage xml
 - python-codacy-coverage -r coverage.xml
-- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code
-  $TRAVIS_TEST_RESULT; fi
 deploy:
   provider: pypi
   user: k33k00
