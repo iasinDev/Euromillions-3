@@ -6,7 +6,7 @@ setup(
     license='Creative Commons Attribution-Noncommercial-Share Alike license',
     long_description=open('README.rst').read(),
     name='EuroMillions',
-    packages=['euromillions',],
+    packages=['euromillions'],
     url='https://github.com/k33k00/Euromillions-results',
     version='1.0',
     entry_points={
