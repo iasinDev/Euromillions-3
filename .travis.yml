@@ -24,6 +24,7 @@ before_script:
 - chmod +x ./cc-test-reporter
 script:
 - coverage run -m unittest
+- coverage xml
 - python-codacy-coverage -r coverage.xml
 - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code
   $TRAVIS_TEST_RESULT; fi
