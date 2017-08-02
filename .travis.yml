@@ -1,22 +1,21 @@
 language: python
 python:
-- "2.6"
-- "2.7"
-- "3.2"
-- "3.3"
-- "3.4"
-- "3.5"
-- "3.5-dev"
-- "3.6"
-- "3.6-dev"
-- "3.7-dev"
-- "nightly"
+- '2.6'
+- '2.7'
+- '3.2'
+- '3.3'
+- '3.4'
+- '3.5'
+- 3.5-dev
+- '3.6'
+- 3.6-dev
+- 3.7-dev
+- nightly
 install:
-  - pip install .
-script: python -m unittest 
-
+- pip install .
+script: python -m unittest
 deploy:
   provider: pypi
   user: k33k00
   password:
-    secure: oGQjWw+iWE/naw2AlfPv95c5e16I0fApGF+nqHEPYlMN7Kaz8KgJui8AHMyJGiQ/1PRGb9746u/BeVgP4lxHiqNcbeW4q0UKZCaJpA35LCIMMHe95frEzlXb9fS2EVdJ5xuVtWX7VckRg3U37JjNzBfR6pOPUkCpd8P06SZuiW1jkX49iGJsc5sPj9Dm9ctqhikPIfI5okAk9sqwmUOY0dKrQfuVqX+VNQawvUpSLzJqOi6q3su7DuZsAPJjckAkvTK4jMGqoHwgpuXjQMIXzi+PmsUQz3PIEbUykHsLTnh4hVY2gUeY0ThEv/l5hJ1hur30QJJYY0c+wFCf8LtqWT3XOPcyxgCHbhuUT2kHUP35Wssou1EkA0ZXOafxcW0iCkIWP+p0Qb3x81p511Pitv4evXZ5AOl25Xoe6jBrcSMt1xIgcz+5aIH7cDgk0zkYPgjhfryrblp+87NGnSYrWgjzv0nRNnffoZGYQxjF38+tRHzyN7zSEo38ZfOACtyHl1DXhhSfPmt7uXilCA1McUVBvIxIQLDxaFMn0VB0yEhYCGXjaF78f3ZZE3h6z2ihH8QOHhMK7aJ9OwqEH5CpHMjq9XlI8ZSZy3REMq0T28setAF34ljTtvZvGmuhkKDfPKL2Tzys7vkdOgi+gaXMfDUxz0dvIIVk+VvDtFcsiBU=
+    secure: XJFpOpx2WtrX9mcxgCakqYZCM8H5PLCgiV4mA5xyrhnVNLGs8uNOVOt7lth+6KKDIEOBsgefmgcDbAdGKIu/LXkRWBoip6Bl2mUiuKw9r6cb5121nzbdv4axkOoqQ+TC4IU6j/GnxgOg7aoECVaO5kkEtvEeZ5mboFVruUMUS9EJaJ7zB3r2Y1Zn4trGNx+IT+wbxlaS4+SQbTFVodcGQoWLxlwLbW4gmoLGB3wMxOytQWzJb8fnEzNMosabIdwCjjZbw6OxWKlHfUVXQfH7nlGsUyId8/vdRFEFGuH1UXhOfg/HjCxZ/xkQxSMLqATZ8JE4NzEnJjam8qu+KDOWL6CWT6z8OFT8Vzc9BgHOmpVZWf/BzwKPRZvJdV2rH3f2crjMbWrhuFTWYRDAjsrR4YklHeKBbIwU42meL9UGcqHNYVq3aVvGVzcDypL3zykEM6li447qpmb4b23ojtFtDdg2/JGVRhSMsR2molq8TpQ5U1CMlt/8021H1qLE5+koWmgoTJpQSqdh+rOXRGgNui5VsPTjiPq92AKhmJGLflXQRq9WbPied9wUoNLJWWbvRt0gbToZmoG9MrdRdU52hymjh7BPqmZaiNIj+JZD5U0cV4AaJm2ewbSF4CyyzxcCl5JPjjhfKbE2njinQWhTuCyrZBhTPaXuynjzCgQ471g=
