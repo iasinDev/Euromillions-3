@@ -1,3 +1,10 @@
+env:
+  global:
+    CC_TEST_REPORTER_ID:
+      secure: p/BLA/om6PjTEDc440MOiE4mhwv3aNG7WJVhoUtSqz2ZBH+Y1fMWnk3kouDHXxiIOhFJVfWAL1AGwDm0cj/aYE8hK10Q7jQG4XhJS/AQloUEerpLPvKDh2IfjEnuY23/3psyrQm2RE7Q0WxmtkUGE1/QcG7Wa46cOP+z+IjhxlAvs0D/xgIPBJ6l5WkgKft1c7A4wxO2UeY30kIRO2rf3PIvVoc+k2c59dHLDzFsgwo1gVNsxeoWBLQdt5g+UtBDi0HRkLQKEuARVst05UksIAKp8x/14iOIuYliRpqVPUT5BK5qeIsi2WaKPxYhJ4MRNmohGUbdjdvm18GYGxjYxONBh+UJ94cG7dhwfgnZ4X8hhVZ0qVbY9Q+bP3FwTg4/XZ38ZoArZoEnwk0daed8gurWo5XZD0lPXmU11Rxz/Aj4GHA+bJxZUstqRnIOumtkOu4/lhxS9rH7unlyO5Z1foBySmnMgOdoqXUwUD1kVKZTuY54Y6DbNGDr2OTAcU3CT7hXj8VjvsZ9eWM/7wuXnWYPeIFfMzboaV1wuqK8mHghsAmJuImAq64WNdwz8fAPX1BLEaL5takFaTqtsvvaFYxeLsAd4/LTpNuUcY726ukMaqjMU5G7RlKjUkwuGn7LQ01LAmBQDvxWMjaDc9MUVsbj/Tpx106cR1RKzd94W5I=
+    CODACY_PROJECT_TOKEN:
+      secure: xR9irWmyDlpd5a8xU3IKeQEDRnajtToIAmquq8723dbUuaf4VTaKQZe+C4eTmxDfWBO1COjGVEgA6B4H+vMpDo+nnkVdMlI/KYJiTAvtyM5p1NYxDc+0nHTs5BrGwNjpuh1TBR05+oapZcaVXBd3XSw0IT2ACAr/nWD8qNll8cyqS/GEzKAQiwQYLF/hseCBl/ExH+hGFmmvVUO5Sg/YFT07XSGc/vt+BP+SCtKSCNGDAsCd6YSBbsohGvIXlJWECMyjVDkQryJ1/s97rqyb0bexAwnfXkFHVd35n/R6jJN7EXa0P4jvZaiRWMFkg7lM2Zge+rMZGbEr+ZZVUPmANvHPPGH2l4vs2akBjYDyffdZO86XPcn4oqIdNxahzS4G04FnPS6m7WqEHpBjkREnGoN/CCY3xkDMxNwBHYCvBsvWNspY47vdJCok5lBwYXu5AFMxnxpoPNCpTsjXTVjMio5HNKJ3zODOwguuNyl7EB0uV/WX4JGcGyIAjtsmJUZI+R1J0lPjlzsrOXWtYEchJJ7xQ75F3pRxETnxYCTMBtLp5f+UMZ6/SEiMXbTaYOzqQijIkm2hAztW5Mj8npLAq58HkFd/tKUBMfJfLL6hH8o0gIV2N6S1rTSnFcSiCByB3+6ErU8H43TG0rcbO9y0S4bBSANrE4hEWiaoKY6bIZk=
+
 language: python
 python:
 - '2.6'
@@ -13,13 +20,19 @@ python:
 - nightly
 install:
 - pip install .
-- pip install coverage
-
-script: coverage run -m unittest
+- pip install coverage codacy-coverage
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+script:
+- coverage run -m unittest
+- python-codacy-coverage -r coverage.xml
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code
+  $TRAVIS_TEST_RESULT; fi
 deploy:
   provider: pypi
   user: k33k00
   password:
     secure: XJFpOpx2WtrX9mcxgCakqYZCM8H5PLCgiV4mA5xyrhnVNLGs8uNOVOt7lth+6KKDIEOBsgefmgcDbAdGKIu/LXkRWBoip6Bl2mUiuKw9r6cb5121nzbdv4axkOoqQ+TC4IU6j/GnxgOg7aoECVaO5kkEtvEeZ5mboFVruUMUS9EJaJ7zB3r2Y1Zn4trGNx+IT+wbxlaS4+SQbTFVodcGQoWLxlwLbW4gmoLGB3wMxOytQWzJb8fnEzNMosabIdwCjjZbw6OxWKlHfUVXQfH7nlGsUyId8/vdRFEFGuH1UXhOfg/HjCxZ/xkQxSMLqATZ8JE4NzEnJjam8qu+KDOWL6CWT6z8OFT8Vzc9BgHOmpVZWf/BzwKPRZvJdV2rH3f2crjMbWrhuFTWYRDAjsrR4YklHeKBbIwU42meL9UGcqHNYVq3aVvGVzcDypL3zykEM6li447qpmb4b23ojtFtDdg2/JGVRhSMsR2molq8TpQ5U1CMlt/8021H1qLE5+koWmgoTJpQSqdh+rOXRGgNui5VsPTjiPq92AKhmJGLflXQRq9WbPied9wUoNLJWWbvRt0gbToZmoG9MrdRdU52hymjh7BPqmZaiNIj+JZD5U0cV4AaJm2ewbSF4CyyzxcCl5JPjjhfKbE2njinQWhTuCyrZBhTPaXuynjzCgQ471g=
-    on:
+    on: 
     tags: true
