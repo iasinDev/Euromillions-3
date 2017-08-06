@@ -6,9 +6,9 @@ from datetime import datetime
 import codecs
 
 def _get_source():
-    return urlopen(
-        "https://www.national-lottery.co.uk/results/euromillions/draw-history/csv"
-        )
+    root = "https://www.national-lottery.co.uk"
+    path = "/results/euromillions/draw-history/csv"
+    return urlopen(f'{root}{path}')
 
 def _transform_csv(csv_=_get_source()):
     return csv.DictReader(codecs.iterdecode(csv_, 'utf-8'))
