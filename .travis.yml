@@ -9,12 +9,16 @@ python:
 - nightly
 install:
 - pip install .
-- pip install coverage codacy-coverage codeclimate-test-reporter
+- pip install coverage codacy-coverage
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
 script:
 - coverage run -m unittest
 - coverage xml
 - python-codacy-coverage -r coverage.xml
-- codeclimate-test-reporter
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+
 
 deploy:
   provider: pypi
