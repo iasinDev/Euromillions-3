@@ -1,7 +1,7 @@
 """Tests for euromillions"""
 
 import unittest
-from euromillions import euromillions
+from Euromillions import euromillions
 
 class Tests(unittest.TestCase):
 
@@ -24,6 +24,7 @@ class Tests(unittest.TestCase):
         status = True
         try:
             euromillions.get_results()
+            euromillions.get_latest()
         except Exception:
             status = False
         self.assertTrue(status, 'Failed completion')

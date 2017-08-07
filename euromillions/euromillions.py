@@ -29,5 +29,11 @@ def get_results():
         results.append(_clean_row(i))
     return results
 
+def get_latest():
+    """Get the latest available set of results."""
+    for i in _transform_csv():
+        return(_clean_row(i))
+
 if __name__ == '__main__':
     print(get_results())
+    print(get_latest())
