@@ -6,10 +6,10 @@ from euromillions import euromillions
 class Tests(unittest.TestCase):
 
     def test_results(self):
-        status = True
-        try:
-            euromillions.get_results()
-            euromillions.get_latest()
-        except Exception:
-            status = False
-        self.assertTrue(status, 'Failed completion')
+        if euromillions.get_results():
+            self.assertTrue(True)
+
+    
+    def test_latest(self):
+        if euromillions.get_latest():
+            self.assertTrue(True)
