@@ -2,6 +2,12 @@
 EuroMillions results
 ================
 
+.. image:: https://api.codacy.com/project/badge/Grade/437f61de022b44fda7779442c700811b
+    :target: https://www.codacy.com/app/k33k00/Euromillions?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=k33k00/Euromillions&amp;utm_campaign=Badge_Grade
+    
+.. image:: https://api.codacy.com/project/badge/Coverage/437f61de022b44fda7779442c700811b
+    :target: https://www.codacy.com/app/k33k00/Euromillions?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=k33k00/Euromillions&amp;utm_campaign=Badge_Coverage#
+
 .. image:: https://badge.fury.io/py/EuroMillions.svg
     :target: https://badge.fury.io/py/EuroMillions
 
