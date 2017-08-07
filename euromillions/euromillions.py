@@ -1,5 +1,4 @@
 """Retrieve Euromillion results from the national lottery."""
-
 import csv
 from urllib.request import urlopen
 from datetime import datetime
