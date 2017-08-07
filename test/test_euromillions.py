@@ -1,7 +1,7 @@
 """Tests for euromillions"""
 
 import unittest
-from Euromillions import euromillions
+from euromillions import euromillions
 
 class Tests(unittest.TestCase):
 
