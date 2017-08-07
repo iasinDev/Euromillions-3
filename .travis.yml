@@ -1,25 +1,25 @@
 language: python
 python:
-# - '3.3'
-# - '3.4'
-# - '3.5'
-# - 3.5-dev
+- '3.3'
+- '3.4'
+- '3.5'
+- 3.5-dev
 - '3.6'
-# - 3.6-dev
-# - 3.7-dev
-# - nightly
+- 3.6-dev
+- 3.7-dev
+- nightly
 install:
 - pip install .
-# - pip install coverage codacy-coverage
+- pip install coverage codacy-coverage
 script:
-# - coverage run -m unittest
+- coverage run -m unittest
 - python -m unittest
-# - coverage xml
-# - python-codacy-coverage -r coverage.xml
-# deploy:
-#   provider: pypi
-#   user: k33k00
-#   password:
-#     secure: XJFpOpx2WtrX9mcxgCakqYZCM8H5PLCgiV4mA5xyrhnVNLGs8uNOVOt7lth+6KKDIEOBsgefmgcDbAdGKIu/LXkRWBoip6Bl2mUiuKw9r6cb5121nzbdv4axkOoqQ+TC4IU6j/GnxgOg7aoECVaO5kkEtvEeZ5mboFVruUMUS9EJaJ7zB3r2Y1Zn4trGNx+IT+wbxlaS4+SQbTFVodcGQoWLxlwLbW4gmoLGB3wMxOytQWzJb8fnEzNMosabIdwCjjZbw6OxWKlHfUVXQfH7nlGsUyId8/vdRFEFGuH1UXhOfg/HjCxZ/xkQxSMLqATZ8JE4NzEnJjam8qu+KDOWL6CWT6z8OFT8Vzc9BgHOmpVZWf/BzwKPRZvJdV2rH3f2crjMbWrhuFTWYRDAjsrR4YklHeKBbIwU42meL9UGcqHNYVq3aVvGVzcDypL3zykEM6li447qpmb4b23ojtFtDdg2/JGVRhSMsR2molq8TpQ5U1CMlt/8021H1qLE5+koWmgoTJpQSqdh+rOXRGgNui5VsPTjiPq92AKhmJGLflXQRq9WbPied9wUoNLJWWbvRt0gbToZmoG9MrdRdU52hymjh7BPqmZaiNIj+JZD5U0cV4AaJm2ewbSF4CyyzxcCl5JPjjhfKbE2njinQWhTuCyrZBhTPaXuynjzCgQ471g=
-#     on: 
-#     tags: true
+- coverage xml
+- python-codacy-coverage -r coverage.xml
+deploy:
+  provider: pypi
+  user: k33k00
+  password:
+    secure: XJFpOpx2WtrX9mcxgCakqYZCM8H5PLCgiV4mA5xyrhnVNLGs8uNOVOt7lth+6KKDIEOBsgefmgcDbAdGKIu/LXkRWBoip6Bl2mUiuKw9r6cb5121nzbdv4axkOoqQ+TC4IU6j/GnxgOg7aoECVaO5kkEtvEeZ5mboFVruUMUS9EJaJ7zB3r2Y1Zn4trGNx+IT+wbxlaS4+SQbTFVodcGQoWLxlwLbW4gmoLGB3wMxOytQWzJb8fnEzNMosabIdwCjjZbw6OxWKlHfUVXQfH7nlGsUyId8/vdRFEFGuH1UXhOfg/HjCxZ/xkQxSMLqATZ8JE4NzEnJjam8qu+KDOWL6CWT6z8OFT8Vzc9BgHOmpVZWf/BzwKPRZvJdV2rH3f2crjMbWrhuFTWYRDAjsrR4YklHeKBbIwU42meL9UGcqHNYVq3aVvGVzcDypL3zykEM6li447qpmb4b23ojtFtDdg2/JGVRhSMsR2molq8TpQ5U1CMlt/8021H1qLE5+koWmgoTJpQSqdh+rOXRGgNui5VsPTjiPq92AKhmJGLflXQRq9WbPied9wUoNLJWWbvRt0gbToZmoG9MrdRdU52hymjh7BPqmZaiNIj+JZD5U0cV4AaJm2ewbSF4CyyzxcCl5JPjjhfKbE2njinQWhTuCyrZBhTPaXuynjzCgQ471g=
+    on: 
+    tags: true
