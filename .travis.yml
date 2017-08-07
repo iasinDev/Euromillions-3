@@ -6,12 +6,14 @@ python:
 - nightly
 install:
 - pip install .
-- pip install coverage codacy-coverage
+- pip install coverage codacy-coverage codeclimate-test-reporter
 script:
 - coverage run -m unittest
 - python -m unittest
 - coverage xml
 - python-codacy-coverage -r coverage.xml
+- codeclimate-test-reporter
+
 deploy:
   provider: pypi
   user: k33k00
