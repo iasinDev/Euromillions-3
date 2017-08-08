@@ -8,7 +8,7 @@ setup(
     name='EuroMillions',
     packages=['euromillions'],
     url='https://github.com/k33k00/Euromillions-results',
-    version='2.1.1',
+    version='2.1.2',
     entry_points={
         'console_scripts': [
             'euromillions-all = Euromillions.euromillions:get_results',
