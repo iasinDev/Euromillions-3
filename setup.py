@@ -1,9 +1,10 @@
-import os
 from distutils.core import setup
+
 
 def readme():
     with open('README.rst') as f:
         return f.read()
+
 
 setup(
     author_email='keewynne90+github@gmail.com',

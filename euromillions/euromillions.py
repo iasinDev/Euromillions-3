@@ -4,6 +4,7 @@ from urllib.request import urlopen
 from datetime import datetime
 import codecs
 
+
 class Euromillions:
     """The base class for all methods."""
 
@@ -32,11 +33,11 @@ class Euromillions:
                 row['Ball 3'],
                 row['Ball 4'],
                 row['Ball 5']
-                ],
+            ],
             'stars': [row['Lucky Star 1'], row['Lucky Star 2']],
             'miillionaire_maker': row['UK Millionaire Maker'].split(','),
             'draw_number': row['DrawNumber']
-            }
+        }
 
     def _parse_results(self):
         """The main function that pulls the results."""
@@ -47,10 +48,12 @@ class Euromillions:
 
     def get_results(self):
         """Return all gathered results"""
-        if len(self.data) > 10:
-            return self.data
+        return self.data
 
     def get_latest_draw(self):
         """Return latest draw"""
-        if len(self.data) > 10:
-            return [self.data[0]]
+        return [self.data[0]]
+
+
+if __name__ == '__main__':
+    e = Euromillions()
