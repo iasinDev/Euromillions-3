@@ -6,8 +6,10 @@ python:
 - nightly
 install:
 - pip install .
-- pip install coverage codacy-coverage
+- pip install coverage codacy-coverage flake8 autopep8
 script:
+- autopep8 --aggressive --in-place --recursive .
+- flake8 .
 - coverage run -m unittest
 - coverage xml
 - python-codacy-coverage -r coverage.xml
