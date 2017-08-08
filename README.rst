@@ -33,7 +33,7 @@ Python useage
 
     import euromillions
     print(euromillions.get_results())
-    print(euromillions.get_latest)
+    print(euromillions.get_latest())
 
 Cli commands
 
