@@ -10,6 +10,9 @@ EuroMillions results
 
 .. image:: https://badge.fury.io/py/EuroMillions.svg
     :target: https://badge.fury.io/py/EuroMillions
+    
+.. image:: https://img.shields.io/pypi/pyversions/EuroMillions.svg
+    :target: 
 
 Installation
 ------------
