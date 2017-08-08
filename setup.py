@@ -13,13 +13,7 @@ setup(
     name='EuroMillions',
     packages=['euromillions'],
     url='https://github.com/k33k00/Euromillions-results',
-    version='2.1.4',
-    entry_points={
-        'console_scripts': [
-            'euromillions-all = Euromillions.euromillions:get_results',
-            'euromillions-latest = Euromillions.euromillions:get_latest',
-        ],
-    },
+    version='2.1.5',
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',

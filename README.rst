@@ -31,9 +31,10 @@ Python useage
 
 .. code-block:: python
 
-    import euromillions
-    print(euromillions.get_results())
-    print(euromillions.get_latest())
+    from euromillions.euromillions import Euromillions
+    e = Euromillions()
+    print(e.get_latest_draw())
+    print(e.get_results())
 
 Cli commands
 
